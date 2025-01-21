@@ -2,21 +2,32 @@
 
 This is a Python library for decoding the Victron Energy VE.Direct text protocol used in their range of MPPT solar 
 charge controllers, battery monitors, and inverters.  
-This is a forked version of a package originally created by Janne Kario (https://github.com/karioja/vedirect).
+This is a forked version of a forked version of a package originally created by Janne Kario (https://github.com/karioja/vedirect) modified by J. M. Fife (https://github.com/jmfife/vedirect).
 
 ## Installation
+<!--- Examples might be broken right now--->
 
 To install directly from GitHub:
 ```
-$ python3 -m pip install "git+https://github.com/jmfife/vedirect[examples]"
+$ python3 -m pip install "git+https://github.com/janenen/vedirect"
 ```
-
+<!--- 
+```
+$ python3 -m pip install "git+https://github.com/janenen/vedirect[examples]"
+```
+--->
 If you have cloned or forked the repo already to your local directory and want to use it in live (editable mode):
+```
+$ python3 -m pip install -e "."
+```
+<!---
 ```
 $ python3 -m pip install -e ".[examples]"
 ```
-Note in both cases above, the dependencies needed to run the examples are also installed.
-
+--->
+Note: The examples might not work right now.
+<!---Note in both cases above, the dependencies needed to run the examples are also installed.--->
+<!---
 ## Check
 
 Test both command line entry points:
@@ -76,7 +87,7 @@ vedirect --emulate=mppt --n=2
 {"V": 12800, "VPV": 3350, "PPV": 130, "I": 15000, "IL": 1500, "LOAD": "ON", "Relay": "OFF", "H19": 456, "H20": 45, "H21": 300, "H22": 45, "H23": 350, "ERR": 0, "CS": 5, "FW": "1.19", "PID": "0xA042", "SER#": "HQ141112345", "HSDS": 0, "MPPT": 2}
 {"V": 12800, "VPV": 3350, "PPV": 130, "I": 15000, "IL": 1500, "LOAD": "ON", "Relay": "OFF", "H19": 456, "H20": 45, "H21": 300, "H22": 45, "H23": 350, "ERR": 0, "CS": 5, "FW": "1.19", "PID": "0xA042", "SER#": "HQ141112345", "HSDS": 0, "MPPT": 2}
 ```
-
+--->
 ## Original README.md
 
 This package was forked from karioja at https://github.com/karioja/vedirect.

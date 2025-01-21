@@ -1,12 +1,8 @@
-[build-system]
-requires = ["setuptools>=54.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "vedirect_jmfife"
-version = "1.1.0"
+name = "vedirect"
+version = "0.1.0"
 authors = [
-  { name="J. M. Fife", email="jmfife@gmail.com" },
+  {name = "Jan Zgadzaj",email = "jan.zgadzaj@googlemail.com"}
 ]
 description = "Read Victron VEDirect Devices"
 readme = "README.md"
@@ -24,3 +20,6 @@ dependencies = [
 [project.scripts]
 vedirect = "vedirect.vedirect:main"
 
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
