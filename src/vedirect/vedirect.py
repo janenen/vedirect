@@ -60,6 +60,7 @@ class VEDirect:
         """
         if byte == HEXMARKER and self.state != ParserState.IN_CHECKSUM:
             self.state = ParserState.HEX
+            # TODO: Implement Hex-Protocol
 
         if self.state == ParserState.WAIT_HEADER1:
             if byte == HEADER1:
@@ -122,7 +123,9 @@ class VEDirect:
         new_dict: dict[str:Any] = {}
         for key, val in payload_dict.items():
             try:
-                new_dict[key] = defines.types[key](val)
+                new_dict[key] = {"value": defines.types[key](val)}
+                if key in defines.units.keys():
+                    new_dict[key]["unit"]=defines.units[key]
             except KeyError:
                 print(f"Device sending unknown Key {key} and Value {val}.")
         return new_dict
